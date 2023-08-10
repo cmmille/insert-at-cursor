@@ -9,25 +9,20 @@ textarea {
 
 #preview,
 textarea {
-    width: 90%;
     height: 100%;
+    width: 100%;
     min-height: 250px;
     max-height: 250px;
     resize: none;
     font-family: Arial, Helvetica, sans-serif;
     font-size: small;
     overflow: auto;
-    margin-bottom: 50px;
 }
 
 #preview {
     border: 1px solid black;
     padding: 2px;
     border-radius: 2px;
-}
-
-select {
-    width: 90%;
 }
 
 .preview-text {

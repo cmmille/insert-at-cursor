@@ -3,6 +3,10 @@ body {
     width: 100%;
 }
 
+textarea {
+    display: block;
+}
+
 #preview,
 textarea {
     width: 90%;
@@ -13,6 +17,7 @@ textarea {
     font-family: Arial, Helvetica, sans-serif;
     font-size: small;
     overflow: auto;
+    margin-bottom: 50px;
 }
 
 #preview {

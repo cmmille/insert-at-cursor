@@ -1,0 +1,14 @@
+body {
+    max-width: 1000px;
+    width: 100%;
+}
+
+textarea {
+    width: 90%;
+    height: 250px;
+    resize: none;
+}
+
+select {
+    width: 90%;
+}

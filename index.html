@@ -10,10 +10,10 @@
 </head>
 
 <body>
-    <textarea placeholder="Cat facts go here!" id="catInfo" onblur="saveCursorPosition(this)"></textarea>
+    <textarea placeholder="Cat facts go here!" id="catInfo" onscroll="setScrollPosition(this)"></textarea>
     <div id="preview" style="display: none;"></div>
     <select id="catFacts">
-        <option value="">Choose a cat fact:</option>
+        <!-- <option value="">Choose a cat fact:</option> -->
         <option value="Cats can jump up to six times their length in a single bound.">Cats can jump up to six times
             their length in a single bound.</option>
         <option value="Cats have five toes on their front paws, but only four toes on their back paws.">Cats have five
@@ -26,7 +26,7 @@
             have a special reflective layer in their eyes that helps them see better in the dark.</option>
     </select>
     <button onclick="addAtEnd()">Add Cat Fact</button>
-    <button onclick="addAtCursor()" onmouseenter="showPreview()" onmouseleave="hidePreview()">Add at Cursor</button>
+    <button onclick="addAtCursor()" onmouseenter="showPreview()" onmouseout="hidePreview()">Add at Cursor</button>
 
 </body>
 

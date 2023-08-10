@@ -15,12 +15,13 @@ const valueAtCursor = (textarea) => {
   return newValue;
 };
 
-const valueForPreview = () => {
+const valueForPreview = (textarea) => {
   const catFact = document.getElementById("catFacts").value || "";
   const textAddition = `<span class="preview-text">${catFact}</span>`;
-  const textarea = document.getElementById("catInfo");
+
   const catInfo = textarea.value || "";
-  const cursorPosition = parseInt(textarea.dataset.cursorPosition) || 0;
+  const cursorPosition = textarea.dataset.cursorPosition || 0;
+
   const newValue =
     catInfo.slice(0, cursorPosition) +
     textAddition +
@@ -51,14 +52,20 @@ const saveCursorPosition = (textarea) => {
   textarea.dataset.cursorPosition = cursorPosition;
 };
 
+const setScrollPosition = (textarea) => {
+  const scrollPosition = textarea.scrollTop;
+  textarea.dataset.scrollPosition = scrollPosition;
+};
+
 const showPreview = () => {
   const textarea = document.getElementById("catInfo");
-  const previewValue = valueForPreview();
-  console.log(previewValue);
+  saveCursorPosition(textarea);
+  const previewValue = valueForPreview(textarea);
   textarea.style.display = "none";
   const preview = document.getElementById("preview");
-  preview.style.display = "block";
   preview.innerHTML = previewValue;
+  preview.style.display = "block";
+  preview.scrollTop = textarea.dataset.scrollPosition;
 };
 
 const hidePreview = () => {

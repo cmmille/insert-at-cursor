@@ -7,8 +7,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
-      name: "TextareaUtils",
+      name: "TextAreaUtils",
       fileName: "index",
+      formats: ["es", "umd"],
     },
   },
   plugins: [dts({ rollupTypes: true })],

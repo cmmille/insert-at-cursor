@@ -3,12 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "module": "./dist/textarea-utils.js",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/textarea-utils.js",
-      "require": "./dist/textarea-utils.umd.cjs"
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
     }
   },
   "scripts": {

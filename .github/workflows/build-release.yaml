@@ -19,22 +19,12 @@ jobs:
         run: npm install
       - name: Build project
         run: npm run build
-      # - name: Create build branch
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   run: |
-      #     git config --global user.email "actions@github.com"
-      #     git config --global user.name "GitHub Actions"
-      #     git checkout -b release
-      #     git add dist/ -f
-      #     git commit -m "Add build artifacts"
-      #     git push origin release
       - name: Create Release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.sha }}
+          tag_name: release
           release_name: 1.0.0
           draft: false
           prerelease: false

@@ -2,8 +2,9 @@ name: Build Package
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - "v*"
+      - "release"
 
 jobs:
   build-and-deploy:
@@ -26,22 +27,19 @@ jobs:
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Actions"
           git checkout -b release
-      - name: Delete everything except dist folder
-        run: |
-          shopt -s extglob
-          rm -rf !(dist)
-      - name: Commit build artifacts
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
           git add dist/ -f
           git commit -m "Add build artifacts"
+      - name: Extract version from package.json
+        run: |
+          VERSION=$(jq -r '.version' package.json)
+          echo "::set-env name=VERSION::$VERSION"
       - name: Create Release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ env.VERSION }}
         with:
           tag_name: release
-          release_name: 1.0.0
+          release_name: v${{ env.VERSION }}
           draft: false
           prerelease: false

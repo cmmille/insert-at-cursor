@@ -20,8 +20,6 @@ jobs:
       - name: Build project
         run: npm run build
       - name: Create build branch
-        run: |
-          git checkout -b build
-          git add dist/ -f
-          git commit -m "Add build artifacts"
-          git push origin build
+        uses: peterjgrainger/action-create-branch@v2.0.1
+        with:
+          branch: 'release'

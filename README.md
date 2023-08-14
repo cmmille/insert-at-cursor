@@ -23,7 +23,7 @@ const TextAreaTools = new TextAreaUtils.TextAreaSelectUtility(
 
 ## Demo
 
-Demo website: https://cmmille.github.io/insert-at-cursor/
+Demo website: https://cmmille.github.io/textarea-utils
 
 - Type some text into the textarea.
 - Move the cursor to the desired position in the textarea.

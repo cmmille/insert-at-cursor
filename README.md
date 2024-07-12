@@ -1,7 +1,7 @@
 # Add Items to Textarea at Cursor Position
 
 This project demonstrates how to add items to a textarea at a cursor position using JavaScript.
-A simple [demo web page](https://cmmille.github.io/insert-at-cursor/) is included with a textarea element and a button that allows the user to add items to the textarea at the current cursor position.
+A simple [demo web page](https://cmmille.github.io/textarea-utils/) is included with a textarea element and a button that allows the user to add items to the textarea at the current cursor position.
 
 ## CDN
 
